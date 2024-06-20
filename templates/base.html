@@ -1,0 +1,60 @@
+{% load static %}
+<html>
+    <head>
+        <title>Clean Django Template</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        <link href="{% static 'css/form.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="main-header">
+                    <div class="logo">
+                        <a href="{% url 'home' %}" class="logo">Your&nbsp;Logo</a>
+                    </div>
+                    <div class="menu">
+                        <a href="{% url 'home' %}" class="menu">Home</a>
+                    </div>
+                    <div class="login">
+                        {% if user.is_authenticated %}
+                            <a>Hi, {{ user.username }}</a> <!-- нужно заменить тег <a> на другой например на <p> так как это не ссылка -->
+                            <a href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                            <a href="{% url 'login' %}">Login</a>
+                            <a href="{% url 'signup' %}">Sign&nbsp;up</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </header>
+            <div class="content">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <footer>
+                <div class="main-footer">
+                    <div class="contacts">
+                        <p><h3>YourProject.io</h3></p>
+                        <p>First line.</p>
+                        <p>Second line.</p>
+                        <p><a href="mailto:info@your-project.io">info@your-project.io</a></p>
+                        <p>Copyright 2024 Your-Project.</p>
+                        <p><a href="{% url 'home' %}">Privacy policy</a></p>
+                    </div>
+                    <div class="follow">
+                        <p><h3>Follow us on</h3></p>
+                        <p><a href="{% url 'home' %}">Youtube</a></p>
+                        <p><a href="{% url 'home' %}">Facebook</a></p>
+                        <p><a href="{% url 'home' %}">Instagram</a></p>
+                    </div>
+                    <div class="newsletter">
+                        <p><h3>Newsletter</h3></p>
+                        <p>Subscribe for free content.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
