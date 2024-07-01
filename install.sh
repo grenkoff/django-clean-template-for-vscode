@@ -4,7 +4,7 @@ source .venv/bin/activate
 pip install -U pip
 pip install -r requirements.txt
 echo "# Project \`your-project\`" > README.md
-echo -e "\n.vscode/\n.pylintrc" >> .gitignore
+echo -e "*.sqlite3\n.vscode/\n.pylintrc\n.prettierrc" >> .gitignore
 rm -rf .git
 git init
 git add .

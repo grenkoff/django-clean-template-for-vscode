@@ -1,50 +1,139 @@
 {
+    // updates disabled
+    "extensions.autoCheckUpdates": false,
+    "update.enableWindowsBackgroundUpdates": false,
+    "extensions.autoUpdate": false,
+    "update.showReleaseNotes": false,
+    "update.mode": "none",
+    //terminal
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.enableFileLinks": "off",
+    "terminal.integrated.scrollback": 50,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    //editor
+    "editor.minimap.enabled": false,
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "editor.accessibilitySupport": "off",
+    "editor.autoClosingDelete": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.hover.delay": 100,
+    "editor.roundedSelection": false,
+    "editor.scrollbar.horizontal": "visible",
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.scrollByPage": true,
+    "editor.selectionHighlight": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.includeStrings": false,
+    "explorer.confirmDelete": false,
+    "editor.rulers": [
+        120
+    ],
+    // comment like "this is stop sign"
+    "debug.autoExpandLazyVariables": true,
+    "debug.inlineValues": "on",
+    "debug.terminal.clearBeforeReusing": true,
+    // disable or change junk features
+    "window.commandCenter": false,
+    "workbench.startupEditor": "none",
+    "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
+    "files.autoSave": "afterDelay",
+    "breadcrumbs.enabled": false,
+    "workbench.cloudChanges.autoResume": "off",
+    "workbench.cloudChanges.continueOn": "off",
+    "workbench.enableExperiments": false,
+    "workbench.quickOpen.closeOnFocusLost": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "window.density.editorTabHeight": "compact",
+    "accessibility.verbosity.comments": false,
+    "search.defaultViewMode": "tree",
+    "telemetry.telemetryLevel": "off",
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "settingsSync.keybindingsPerPlatform": false,
+    // themes
+    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+    "window.zoomLevel": 0,
+    // git
     "git.autoRepositoryDetection": "subFolders",
-    "breadcrumbs.enabled": true,
-
+    //Setting up Pylance and code analysis.
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.autoSearchPaths": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.completeFunctionParens": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.importFormat": "absolute",
-    "python.analysis.enablePytestSupport": true,
+    // Enable display of variable typing.
+    // "python.analysis.inlayHints.variableTypes": true,
+    // "python.analysis.inlayHints.functionReturnTypes": true,
+    // "python.analysis.enablePytestSupport": true,
     "python.analysis.indexing": true,
     "python.analysis.packageIndexDepths": [
         {
-            "name": "django",
+            "name": "django", //here is the library you need
             "depth": 3,
             "includeAllSymbols": true
-        }
+        },
+        //like this:
+        // {
+        //     "name": "aiogram",
+        //     "depth": 3,
+        //     "includeAllSymbols": true
+        // }
     ],
-      
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.rulers": [
+            79
+        ]
     },
+    "[css]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "aeschli.vscode-css-formatter",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[json]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    // for django:
     "emmet.includeLanguages": {
         "django-html": "html"
     },
     "files.associations": {
-        "**/*.html": "html",
-        "**/templates/*/*/*.html": "django-html",
-        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+        "**/views/**/*.html": "django-html",
+        "*.tpl": "django-html"
     },
-    "django.snippets.exclude": [
-        "cms",
-        "wagtail"
-    ],
-
-
     "[django-html]": {
-        "editor.defaultFormatter": "batisteo.vscode-django",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "junstyle.vscode-django-support",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
         "breadcrumbs.showClasses": true,
         "editor.quickSuggestions": {
             "other": true,
             "comments": true,
             "strings": true
         }
-    }
+    },
 }

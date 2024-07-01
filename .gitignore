@@ -14,8 +14,4 @@ logs/
 celerybeat-schedule                                                                     
 .ipynb_checkpoints
 .venv/
-.env/
-venv/
-env/
 .env
-*.env
