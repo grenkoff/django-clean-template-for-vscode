@@ -53,10 +53,6 @@
     "telemetry.telemetryLevel": "off",
     "extensions.closeExtensionDetailsOnViewChange": true,
     "settingsSync.keybindingsPerPlatform": false,
-    // themes
-    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
-    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
-    "window.zoomLevel": 0,
     // git
     "git.autoRepositoryDetection": "subFolders",
     //Setting up Pylance and code analysis.
